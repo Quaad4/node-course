@@ -12,18 +12,26 @@ app.listen(3000);
 
 // regular routes
 app.get('/', (req, res) => {
-   res.render('index');
+   res.render('index', {
+      title: '| Home',
+   });
 });
 
 app.get('/about', (req, res) => {
-   res.render('about');
+   res.render('about', {
+      title: '| about',
+   });
 });
 
 app.get('/blogs/create', (req, res) => {
-   res.render('create');
+   res.render('create', {
+      title: '| Create a new Blog',
+   });
 });
 
 //404 not found
 app.use((req, res) => {
-    res.status(404).render('404');
+    res.status(404).render('404', {
+      title: '| 404',
+   });
 });
